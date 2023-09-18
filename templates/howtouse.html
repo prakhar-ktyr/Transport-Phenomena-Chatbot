@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How to Use - Transport Phenomena Chatbot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ysabeau Infant', sans-serif;
+            background-color: #22A699;
+            color: #fff;
+            font-size:large;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+        .navbar {
+            background-color: #F29727;
+        }
+        .footer {
+            font-size: 10px;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('howtouse') }}">How to Use</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('contactus') }}">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center">How to Use Transport Phenomena Chatbot</h1>
+        <hr>
+        <p>
+            Using our chatbot is simple and straightforward. Just follow these steps:
+        </p>
+        <h4>Step 1: Enter Your Question</h4>
+        <p>Use the chatbox to type your question related to Transport Phenomena.</p>
+        <h4>Step 2: Submit the Question</h4>
+        <p>Press the 'Ask' button to submit your question to the chatbot.</p>
+        <h4>Step 3: Get the Answer</h4>
+        <p>The chatbot will process your question and provide a detailed answer.</p>
+        <p>That's it! You can ask as many questions as you like, and the chatbot will always be here to help you.</p>
+        <div class="footer">
+            <p>Design Credit Project by Prakhar Katiyar and Dhruv Agarwal under the mentorship of Dr. Tara Chand Kumawat</p>
+        </div>
+    </div>
+</body>
+</html>

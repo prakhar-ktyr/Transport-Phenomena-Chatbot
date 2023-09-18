@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transport Phenomena Chatbot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body {
+            font-family: 'Ysabeau Infant', sans-serif;
+            background-color: #22A699;
+            color: #fff;
+            font-size:large;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+        .chat-card {
+            background-color: #F2BE22;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            color: #333;
+        }
+        .question {
+            color: #F24C3D;
+        }
+        .btn-primary {
+            background-color: #F29727;
+            border: none;
+        }
+        .footer {
+            font-size: 10px;
+            text-align: center;
+            padding: 20px;
+        }
+        .navbar {
+            background-color: #F29727;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('howtouse') }}">How to Use</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('contactus') }}">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center">Transport Phenomena Chatbot</h1>
+        <hr>
+        <div id="chat">
+            {% for entry in history %}
+                <div class="chat-card">
+                    <h5 class="question">Question: {{ entry.question }}</h5>
+                    <p>Answer: {{ entry.answer }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <form action="/ask" method="post" class="mb-4">
+            <div class="form-group">
+                <label for="question">Ask a new question:</label>
+                <input type="text" id="question" name="question" class="form-control" required>
+            </div>
+            <input type="submit" value="Ask" class="btn btn-primary">
+        </form>
+        <div class="footer">
+            <p>Design Credit Project by Prakhar Katiyar and Dhruv Agarwal under the mentorship of Dr. Tara Chand Kumawat</p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('html, body').animate({
+                scrollTop: $(document).height()
+            }, 'slow');
+        });
+    </script>
+</body>
+</html>
